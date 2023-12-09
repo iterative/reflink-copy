@@ -1,0 +1,28 @@
+[package]
+name = "glitters"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "glitters"
+crate-type = ["cdylib"]
+
+[dependencies]
+reflink-copy = "0.1.13"
+
+[dependencies.pyo3]
+version = "0.19.0"
+features = ["abi3-py38"]
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+perf = "warn"
+pedantic = "warn"
+case_sensitive_file_extension_comparisons = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+module_name_repetitions = "allow"
+must_use_candidate = "allow"
+return_self_not_must_use = "allow"
