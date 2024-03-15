@@ -2,17 +2,18 @@
 name = "glitters"
 version = "0.1.0"
 edition = "2021"
+license = "Apache-2.0"
 
 [lib]
 name = "glitters"
 crate-type = ["cdylib"]
 
 [dependencies]
-reflink-copy = "0.1.13"
+reflink-copy = "0.1.15"
 
 [dependencies.pyo3]
-version = "0.19.0"
-features = ["abi3-py38"]
+version = "0.21.0-beta.0"
+features = ["abi3-py38", "experimental-declarative-modules"]
 
 [lints.rust]
 unsafe_code = "forbid"
