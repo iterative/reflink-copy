@@ -17,7 +17,7 @@ def make_tmp_dir_pytest_cache(request):
     The cache directory by default, is in the root of the repo, where reflink
     may be supported."""
     cache = request.config.cache
-    path = cache.mkdir("dvc_objects_tests")
+    path = cache.mkdir("glitters")
 
     def inner(name=None):
         tmp_dir = TemporaryDirectory(prefix=name, dir=path)
