@@ -21,7 +21,7 @@ def reflink_or_copy(src: str | os.PathLike[str], dst: str | os.PathLike[str]) ->
 
 ### Contributing
 
-```
+```bash
 python -m venv .venv; source .venv/bin/activate
 pip install maturin
 maturin develop
