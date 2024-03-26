@@ -37,14 +37,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Build wheels
+      - name: Build wheels - manylinux
         uses: PyO3/maturin-action@v1
         with:
           target: ${{ matrix.target }}
           args: --release --out dist
           sccache: 'true'
           manylinux: auto
-
+      - name: Build wheels - musllinux
+        uses: PyO3/maturin-action@v1
+        if: ${{ matrix.target != 's390x' && matrix.target != 'ppc64le' }}
+        with:
+          target: ${{ matrix.target }}
+          args: --release --out dist
+          sccache: 'true'
+          manylinux: musllinux_1_1
       - name: Upload wheels
         uses: actions/upload-artifact@v4
         with:
