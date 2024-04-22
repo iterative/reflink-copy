@@ -9,7 +9,7 @@ name = "glitters"
 crate-type = ["cdylib"]
 
 [dependencies]
-reflink-copy = "0.1.15"
+reflink-copy = "0.1.17"
 
 [dependencies.pyo3]
 version = "0.21.1"
