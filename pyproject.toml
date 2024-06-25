@@ -3,7 +3,7 @@ requires = ["maturin>=1.0,<2.0"]
 build-backend = "maturin"
 
 [project]
-name = 'glitters'
+name = 'reflink-copy'
 requires-python = '>=3.8'
 license = { text = "Apache License 2.0" }
 

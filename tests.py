@@ -7,7 +7,7 @@ import pytest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-import glitters
+import reflink_copy
 
 
 @pytest.fixture(scope="session")
@@ -17,7 +17,7 @@ def make_tmp_dir_pytest_cache(request):
     The cache directory by default, is in the root of the repo, where reflink
     may be supported."""
     cache = request.config.cache
-    path = cache.mkdir("glitters")
+    path = cache.mkdir("reflink-copy")
 
     def inner(name=None):
         tmp_dir = TemporaryDirectory(prefix=name, dir=path)
@@ -33,7 +33,9 @@ def test_dir(make_tmp_dir_pytest_cache):
 
 
 @pytest.mark.parametrize("conv", [os.fspath, lambda x: x])
-@pytest.mark.parametrize("reflink", [glitters.reflink, glitters.reflink_or_copy])
+@pytest.mark.parametrize(
+    "reflink", [reflink_copy.reflink, reflink_copy.reflink_or_copy]
+)
 def test_reflink(test_dir, conv, reflink):
     src = test_dir / "source"
     dest = test_dir / "dest"
@@ -51,11 +53,11 @@ def test_reflink(test_dir, conv, reflink):
 
 def test_reflink_src_not_existing(test_dir):
     with pytest.raises(FileNotFoundError):
-        glitters.reflink(test_dir / "src", test_dir / "dst")
+        reflink_copy.reflink(test_dir / "src", test_dir / "dst")
 
 
 def test_reflink_dst_already_exists(test_dir):
     (test_dir / "src").write_bytes(b"hello")
     (test_dir / "dst").write_bytes(b"hello")
     with pytest.raises(FileExistsError):
-        glitters.reflink(test_dir / "src", test_dir / "dst")
+        reflink_copy.reflink(test_dir / "src", test_dir / "dst")

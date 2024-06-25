@@ -1,5 +1,5 @@
 #[pyo3::pymodule]
-mod glitters {
+mod reflink_copy {
     use pyo3::pyfunction;
     use std::path::PathBuf;
 

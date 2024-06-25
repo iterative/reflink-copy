@@ -1,4 +1,4 @@
-### glitters
+### `reflink-copy`
 
 Python wrapper for [`reflink-copy`](https://github.com/cargo-bins/reflink-copy).
 
@@ -6,7 +6,7 @@ Python wrapper for [`reflink-copy`](https://github.com/cargo-bins/reflink-copy).
 
 
 ```python
-from glitters import reflink, reflink_or_copy
+from reflink_copy import reflink, reflink_or_copy
 
 reflink("file1", "file2")
 reflink_or_copy("file1", "file2")
