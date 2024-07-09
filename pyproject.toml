@@ -3,9 +3,39 @@ requires = ["maturin>=1.0,<2.0"]
 build-backend = "maturin"
 
 [project]
-name = 'reflink-copy'
-requires-python = '>=3.8'
-license = { text = "Apache License 2.0" }
+name = "reflink-copy"
+description = "Python wrapper for reflink_copy Rust library"
+requires-python = ">=3.8"
+license = {text = "Apache License 2.0"}
+keywords = [
+  "reflink",
+]
+authors = [
+  {name = "Saugat Pachhai"},
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Rust",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: MacOS",
+  "Typing :: Typed"
+]
+
+[project.urls]
+Homepage = "https://github.com/iterative/reflink-copy"
+Source = "https://github.com/iterative/reflink-copy"
 
 [tool.maturin]
 features = ["pyo3/extension-module"]
