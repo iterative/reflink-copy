@@ -30,7 +30,7 @@ def reflink_or_copy(src: str | os.PathLike[str], dst: str | os.PathLike[str]) ->
 
 ```bash
 python -m venv .venv; source .venv/bin/activate
-pip install maturin
+pip install maturin pytest
 maturin develop
 pytest
 ```
