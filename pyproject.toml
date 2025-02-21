@@ -32,6 +32,7 @@ classifiers = [
   "Operating System :: MacOS",
   "Typing :: Typed"
 ]
+dynamic = ["version"]
 
 [project.urls]
 Homepage = "https://github.com/iterative/reflink-copy"
