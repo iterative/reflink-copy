@@ -177,6 +177,10 @@ jobs:
           target: ${{ matrix.platform.target }}
           args: --release --out dist
           sccache: ${{ !startsWith(github.ref, 'refs/tags/') }}
+      - uses: Quansight-Labs/setup-python@v5
+        with:
+          python-version: '3.13t'
+          architecture: ${{ matrix.platform.target }}
       - name: Build free-threaded wheels
         uses: PyO3/maturin-action@v1
         with:
