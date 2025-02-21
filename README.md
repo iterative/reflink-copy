@@ -4,7 +4,7 @@ Python wrapper for [`reflink-copy`](https://github.com/cargo-bins/reflink-copy).
 
 ### Installation
 
-You can install the library via `pip` from [PyPI](https://pypi.org/reflink-copy):
+You can install the library via `pip` from [PyPI](https://pypi.org/project/reflink-copy):
 
 ```console
 pip install reflink-copy
