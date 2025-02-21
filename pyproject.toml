@@ -41,4 +41,5 @@ Source = "https://github.com/iterative/reflink-copy"
 features = ["pyo3/extension-module"]
 
 [tool.pytest.ini_options]
+addopts = ["-ra"]
 testpaths = ["tests.py"]

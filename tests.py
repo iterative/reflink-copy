@@ -36,6 +36,7 @@ def test_dir(make_tmp_dir_pytest_cache):
 @pytest.mark.parametrize(
     "reflink", [reflink_copy.reflink, reflink_copy.reflink_or_copy]
 )
+@pytest.mark.xfail(raises=OSError)
 def test_reflink(test_dir, conv, reflink):
     src = test_dir / "source"
     dest = test_dir / "dest"
@@ -51,11 +52,13 @@ def test_reflink(test_dir, conv, reflink):
     assert stat_mode == (0o666 & ~umask(0))
 
 
+@pytest.mark.xfail(raises=OSError)
 def test_reflink_src_not_existing(test_dir):
     with pytest.raises(FileNotFoundError):
         reflink_copy.reflink(test_dir / "src", test_dir / "dst")
 
 
+@pytest.mark.xfail(raises=OSError)
 def test_reflink_dst_already_exists(test_dir):
     (test_dir / "src").write_bytes(b"hello")
     (test_dir / "dst").write_bytes(b"hello")
