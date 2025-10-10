@@ -1,4 +1,4 @@
-#[pyo3::pymodule]
+#[pyo3::pymodule(gil_used = false)]
 mod reflink_copy {
     use std::path::PathBuf;
 
