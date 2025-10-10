@@ -27,7 +27,7 @@ jobs:
           - runner: ubuntu-22.04
             target: x86_64
           - runner: ubuntu-22.04
-            target: x86
+            target: i686
           - runner: ubuntu-22.04
             target: aarch64
           - runner: ubuntu-22.04
@@ -38,8 +38,6 @@ jobs:
             target: ppc64
           - runner: ubuntu-22.04
             target: ppc64le
-          - runner: ubuntu-22.04
-            target: i686
           - runner: ubuntu-22.04
             target: riscv64gc-unknown-linux-gnu
             arch: riscv64
@@ -97,7 +95,7 @@ jobs:
           - runner: ubuntu-22.04
             target: x86_64
           - runner: ubuntu-22.04
-            target: x86
+            target: i686
           - runner: ubuntu-22.04
             target: aarch64
           - runner: ubuntu-22.04
