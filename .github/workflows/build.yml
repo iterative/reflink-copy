@@ -72,7 +72,7 @@ jobs:
           pip install pytest
           pytest
       - name: pytest
-        if: ${{ !startsWith(matrix.platform.target, 'x86') && matrix.platform.target != 'ppc64' && matrix.platform.target != 'i686' }}
+        if: ${{ !startsWith(matrix.platform.target, 'x86') && matrix.platform.target != 'ppc64' }}
         uses: uraimo/run-on-arch-action@v3
         with:
           arch: ${{ matrix.platform.arch || matrix.platform.target }}
