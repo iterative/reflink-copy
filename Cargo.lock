@@ -168,7 +168,7 @@ dependencies = [
 
 [[package]]
 name = "reflink-copy"
-version = "0.3.2"
+version = "0.3.3"
 dependencies = [
  "pyo3",
  "reflink-copy 0.1.28",
